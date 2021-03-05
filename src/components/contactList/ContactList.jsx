@@ -1,5 +1,5 @@
 import React from 'react';
-import { Filter } from '../Filter';
+import { Filter } from '../filter/Filter';
 import { ListItem } from './ListItem';
 import css from './ContactList.module.css';
 

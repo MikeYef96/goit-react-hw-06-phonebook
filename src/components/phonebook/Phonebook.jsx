@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import { ContactForm } from './ContactForm';
-import { ContactList } from './contactList/ContactList';
+import { ContactForm } from '../contactForm/ContactForm';
+import { ContactList } from '../contactList/ContactList';
 import css from './Phonebook.module.css';
 
 export class Phonebook extends Component {

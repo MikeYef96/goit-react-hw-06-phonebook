@@ -1,5 +1,5 @@
 import React from 'react';
-import { InputFn } from '../lib/InputFn';
+import { InputFn } from '../../lib/InputFn';
 
 export function Filter({ value, onChangeFilter }) {
   return (

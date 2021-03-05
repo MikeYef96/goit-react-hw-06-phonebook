@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { ButtonFn } from '../lib/ButtonFn';
-import { InputFn } from '../lib/InputFn';
+import { ButtonFn } from '../../lib/ButtonFn';
+import { InputFn } from '../../lib/InputFn';
 import css from './ContactForm.module.css';
 
 const initState = {
