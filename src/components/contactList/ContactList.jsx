@@ -1,10 +1,8 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { deleteContact } from '../../redux/actions';
-// import PropTypes from 'prop-types';
 import { Filter } from '../filter/Filter';
 import { ButtonFn } from '../../lib/ButtonFn';
-// import { ListItem } from './ListItem';
 import css from './ContactList.module.css';
 
 export function ContactList({
@@ -50,14 +48,3 @@ export function ContactList({
     </>
   );
 }
-
-// ContactList.propTypes = {
-//   onDeleteContact: PropTypes.func,
-//   contacts: PropTypes.arrayOf(
-//     PropTypes.exact({
-//       id: PropTypes.string,
-//       name: PropTypes.string,
-//       number: PropTypes.string,
-//     }),
-//   ),
-// };
