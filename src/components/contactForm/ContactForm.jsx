@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 
+import { getContacts } from '../../redux/selectors';
 import { addContact } from '../../redux/actions';
 import { ButtonFn } from '../../lib/ButtonFn';
 import { InputFn } from '../../lib/InputFn';
@@ -10,7 +11,8 @@ import css from './ContactForm.module.css';
 export function ContactForm() {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
-  const { contacts } = useSelector(state => state);
+
+  const contacts = useSelector(getContacts);
   const dispatch = useDispatch();
 
   const onAddContact = (name, number) => dispatch(addContact(name, number));
@@ -18,8 +20,7 @@ export function ContactForm() {
   const handleSubmit = evt => {
     evt.preventDefault();
 
-    const isAdded = name =>
-      contacts.map(contact => contact.name).includes(name);
+    const isAdded = name => contacts.find(contact => contact.name === name);
 
     if (isAdded(name)) {
       return alert(`${name} is already exists`);
