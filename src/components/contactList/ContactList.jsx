@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import PropTypes from 'prop-types';
 import { deleteContact } from '../../redux/actions';
 import { getVisibleContacts } from '../../redux/selectors';
 import { Filter } from '../filter/Filter';
@@ -27,7 +28,7 @@ export function ContactList() {
               <ButtonFn
                 name="delete"
                 type="button"
-                onClick={() => onDeleteContact(id)}
+                onClick={event => onDeleteContact(id)}
               />
             </div>
           </li>
@@ -36,3 +37,7 @@ export function ContactList() {
     </>
   );
 }
+
+ContactList.propTypes = {
+  onDeleteContact: PropTypes.func,
+};

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 
-import { addContact } from '../../redux/actions';
+import { addContact, deleteContact } from '../../redux/actions';
 import { ContactForm } from '../contactForm/ContactForm';
 import { ContactList } from '../contactList/ContactList';
 import css from './Phonebook.module.css';
@@ -15,7 +15,7 @@ function Phonebook({ contacts }) {
     <React.Fragment>
       <div className={css.container}>
         <ContactForm onAddContact={addContact} />
-        <ContactList />
+        <ContactList onDeleteContact={deleteContact} />
       </div>
     </React.Fragment>
   );
