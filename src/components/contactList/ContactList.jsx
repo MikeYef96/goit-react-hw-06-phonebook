@@ -11,7 +11,8 @@ export function ContactList() {
   const contacts = useSelector(getVisibleContacts);
   const dispatch = useDispatch();
 
-  const onDeleteContact = id => dispatch(deleteContact(id));
+  const onDeleteContact = evt =>
+    dispatch(deleteContact(evt.target.closest('[data-id]').dataset.id));
 
   return (
     <>
@@ -19,17 +20,13 @@ export function ContactList() {
       <Filter />
       <ul>
         {contacts.map(({ id, name, number }) => (
-          <li className={css.contactListItem} key={id}>
+          <li className={css.contactListItem} key={id} data-id={id}>
             <div className={css.listItemContainer}>
               <p>
                 {name}: <span>{number}</span>
               </p>
 
-              <ButtonFn
-                name="delete"
-                type="button"
-                onClick={event => onDeleteContact(id)}
-              />
+              <ButtonFn name="delete" type="button" onClick={onDeleteContact} />
             </div>
           </li>
         ))}
