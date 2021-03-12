@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 
 import { addContact, deleteContact } from '../../redux/actions';
@@ -6,11 +6,7 @@ import { ContactForm } from '../contactForm/ContactForm';
 import { ContactList } from '../contactList/ContactList';
 import css from './Phonebook.module.css';
 
-function Phonebook({ contacts }) {
-  useEffect(() => {
-    localStorage.setItem('contacts', JSON.stringify(contacts));
-  }, [contacts]);
-
+function Phonebook() {
   return (
     <React.Fragment>
       <div className={css.container}>
